@@ -29,6 +29,10 @@ not yet support this.
 
 ## Usage
 
+Run from a terminal, feeding in a file containing the raids to be routed, e.g.  
+
+./ariadne testraids.csv  
+
 Ariadne expects lists of raids in the following format:  
 
 name, decimal longitude, decimal latitude, expiration time  
@@ -55,3 +59,11 @@ sufficient. Just make sure you delete the raids you no longer need to consider.
 In particular, any raids which have already expired will be interpreted as 
 taking place 12 or 24 hours in the future, so they will still be included in
 routing just like the non-expired ones.  
+
+## Options
+
+There is not yet any option parsing, though there are a couple of constants 
+inside the source code which I'd like to make settable as options: the movement
+speed between raids and the time spent per raid. Meanwhile, though, if you want
+to change these you'll have to edit them in geometry.hpp and routing.hpp and
+recompile.  
